@@ -1,1 +1,92 @@
+$primary: #16232e;
+$secondary: #cc8d1a;
+$success: #164c45;
+$info: #e3c75f;
+$warning: #bda523;
+$dark: #16232e;
+
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+nav.navbar {
+  padding: 0;
+}
+a.navbar-brand {
+  padding: 0px;
+}
+.navbar a {
+  color: $primary;
+}
+
+#navBar img {
+  width: 50px;
+  height: 50px;
+}
+#introduction,
+#dogs {
+  padding-top: 50px;
+  min-height: 100dvh;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#introduction p {
+  width: 25%;
+  color: $info;
+}
+.card {
+  margin: 0 30px;
+  background-color: $secondary;
+  p,
+  h5 {
+    color: $primary;
+  }
+
+  .dog-button {
+    color: $secondary;
+    width: 60%;
+  }
+  &:hover {
+    transform: scale(1.08);
+    transition: all 0.5s linear;
+    background-color: #164c45;
+    p,
+    h5 {
+      color: $info;
+    }
+    .dog-button {
+      background-color: $info;
+      color: $primary;
+      outline: none;
+      &:hover {
+        transform: scale(1.03);
+        transition: all 0.5s linear;
+        background-color: $primary;
+        color: $secondary;
+        box-shadow: 0 0 20px $info;
+      }
+    }
+  }
+}
+button > img {
+  width: fit-content;
+  height: fit-content;
+}
+@include media-breakpoint-down(sm) {
+  * {
+    font-size: 0.9rem;
+  }
+  .card {
+    margin: 0 20px;
+    button > img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
